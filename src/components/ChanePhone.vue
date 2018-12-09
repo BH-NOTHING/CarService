@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: 'ChanePhone',
+  name: 'chanePhone',
   data () {
     return {
       phone: '18710139476',
@@ -62,6 +62,7 @@ export default {
   background: #BAE4BC;
   margin-left: 30px;
   font-size: 20px;
+  text-align: center;
 }
 .phoneInfo .info-detail{
   padding-left: 10px;

@@ -2,7 +2,8 @@
   <div id="app">
     <!--<chanePhone/>-->
     <!--<collection/>-->
-    <orderRecord/>
+    <!--<orderRecord/>-->
+    <collectionRecord/>
   </div>
 </template>
 
@@ -10,13 +11,15 @@
 import chanePhone from './components/chanePhone'
 import collection from './components/collection'
 import orderRecord from './components/orderRecord'
+import collectionRecord from './components/collectionRecord'
 
 export default {
   name: 'App',
   components: {
     chanePhone,
     collection,
-    orderRecord
+    orderRecord,
+    collectionRecord
   }
   // B5B5B5
 }

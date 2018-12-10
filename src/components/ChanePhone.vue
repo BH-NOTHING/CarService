@@ -36,8 +36,8 @@ export default {
       type: '超级管理员'
     }
   },
-  methods:{
-    changePhoone(){
+  methods: {
+    changePhoone () {
       console.log('更改手机')
     }
   }

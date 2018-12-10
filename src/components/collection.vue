@@ -35,11 +35,11 @@ export default {
       type: '超级管理员'
     }
   },
-  methods:{
-    next(){
+  methods: {
+    next () {
       console.log('下一步')
     },
-    collectionRecord(){
+    collectionRecord () {
       console.log('收款记录')
     }
   }

@@ -40,27 +40,27 @@ export default {
           name: '坐垫(5座)',
           price: '30.00元',
           date: '2018-12-02 10：40：41'
-        },{
+        }, {
           name: '坐垫(5座)',
           price: '30.00元',
           date: '2018-12-02 10：40：41'
-        },{
+        }, {
           name: '坐垫(5座)',
           price: '30.00元',
           date: '2018-12-02 10：40：41'
-        },{
+        }, {
           name: '坐垫(5座)',
           price: '30.00元',
           date: '2018-12-02 10：40：41'
-        },{
+        }, {
           name: '坐垫(5座)',
           price: '30.00元',
           date: '2018-12-02 10：40：41'
-        },{
+        }, {
           name: '坐垫(5座)',
           price: '30.00元',
           date: '2018-12-02 10：40：41'
-        },{
+        }, {
           name: '坐垫(5座)',
           price: '30.00元',
           date: '2018-12-02 10：40：41'
@@ -68,16 +68,16 @@ export default {
       ]
     }
   },
-  computed:{
-    getTotal(){
-      return (this.total+'').replace(/(?=((?!\b)\d{3})+$)/g,',')
+  computed: {
+    getTotal () {
+      return (this.total + '').replace(/(?=((?!\b)\d{3})+$)/g, ',')
     }
   },
-  methods:{
-    next(){
+  methods: {
+    next () {
       console.log('下一步')
     },
-    collectionRecord(){
+    collectionRecord () {
       console.log('收款记录')
     }
   }

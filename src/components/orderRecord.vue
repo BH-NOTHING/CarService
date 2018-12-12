@@ -3,7 +3,10 @@
     <div class="order-title">安装订单</div>
     <div class="order-record">
       <ul>
-        <li class="record-details" v-for="item in orders">
+        <li
+          class="record-details"
+          v-for="(item,index) in orders"
+          :key="index">
           <div class="record-info">
             <div>
               <span class="info-good">{{item.good}}</span>

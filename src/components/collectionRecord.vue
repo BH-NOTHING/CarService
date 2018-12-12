@@ -9,11 +9,16 @@
       <span>收款记录</span>
     </div>
     <div class="collection-record-list">
-      <div class="item-wrap" v-for="item in recordList">
+      <div
+        class="item-wrap"
+        v-for="(item,index) in recordList"
+        :key="index">
         <div class="item-name">{{item.name}}</div>
         <div class="item-price">{{item.price}}</div>
         <div class="item-date">{{item.date}}</div>
-        <div class="icon-next">x</div>
+        <div class="icon-next" @clic="moreInfo(item)">
+          <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="570"><path style="fill:#CCCCCC" d="M439.456 755.2l-59.744-59.744L563.168 512l-183.456-183.456L439.456 268.8l243.2 243.2z" p-id="571"></path></svg>
+        </div>
       </div>
     </div>
   </div>
@@ -74,11 +79,8 @@ export default {
     }
   },
   methods: {
-    next () {
+    moreInfo () {
       console.log('下一步')
-    },
-    collectionRecord () {
-      console.log('收款记录')
     }
   }
 }

@@ -3,7 +3,8 @@
     <!--<chanePhone/>-->
     <!--<collection/>-->
     <!--<orderRecord/>-->
-    <collectionRecord/>
+    <!--<collectionRecord/>-->
+    <addShop/>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import chanePhone from './components/chanePhone'
 import collection from './components/collection'
 import orderRecord from './components/orderRecord'
 import collectionRecord from './components/collectionRecord'
+import addShop from './components/addShop'
 
 export default {
   name: 'App',
@@ -19,7 +21,8 @@ export default {
     chanePhone,
     collection,
     orderRecord,
-    collectionRecord
+    collectionRecord,
+    addShop
   }
   // B5B5B5
 }
@@ -28,6 +31,7 @@ export default {
 <style>
 #app {
   font-family: 'Arial', Helvetica, Arial, sans-serif;
+  font-size: 14px;
 }
 #app input::-webkit-input-placeholder {
   color: #B5B5B5;

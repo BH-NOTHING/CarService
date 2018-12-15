@@ -5,6 +5,7 @@
     <!--<orderRecord/>-->
     <!--<collectionRecord/>-->
     <addShop/>
+    <!--<qqmap></qqmap>-->
   </div>
 </template>
 
@@ -22,7 +23,7 @@ export default {
     collection,
     orderRecord,
     collectionRecord,
-    addShop
+    addShop,
   }
   // B5B5B5
 }
@@ -35,6 +36,8 @@ export default {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 #app input::-webkit-input-placeholder {
   color: #B5B5B5;

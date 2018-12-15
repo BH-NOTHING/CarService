@@ -121,7 +121,8 @@ let chooseFileCallback = w => {
         urlArr = []
       let fileLen = w.files.length
       let isList = w.fileType.includes('list')
-      let url = fileLen > 1 ? workApi.MultiUpload : workApi.upload
+      let url = ''
+      // TODO
       let form = new FormData()
       if (fileLen <= 20) {
         if (fileLen > 1) {
@@ -158,7 +159,7 @@ let chooseFileCallback = w => {
         }
         let xhr = new XMLHttpRequest()
         xhr.open('POST', url)
-        xhr.upload.onprogress = w.onProgress
+        // xhr.upload.onprogress = w.onProgress
         xhr.onreadystatechange = function() {
           if (xhr.readyState == 4) {
             let response = JSON.parse(xhr.responseText)
@@ -171,15 +172,15 @@ let chooseFileCallback = w => {
             }else{
               urlArr = response.name
             }
-            w.callback(urlArr, nameArr, typeArr, sizeArr)
+            // w.callback(urlArr, nameArr, typeArr, sizeArr)
           }
         }
         xhr.send(form)
       }
     } else {
-      if (w.callback) {
-        w.callback(files)
-      }
+      // if (w.callback) {
+      //   w.callback(files)
+      // }
     }
   }
 }
@@ -212,65 +213,65 @@ let destroyInputBtn = dom => {
 
 // 选择文件上传
 var chooseFile = (type, info) => {
-  const {
-    toServer,
-    progress,
-    selected,
-    callback,
-    specialInfo,
-    nid,
-    accept,
-    error
-  } = info
+  // const {
+  //   // toServer,
+  //   // progress,
+  //   // selected,
+  //   // callback,
+  //   // specialInfo,
+  //   // nid,
+  //   // accept,
+  //   // error
+  // } = info
   let dom = createInputBtn()
   dom.value = ''
   dom.fileType = type
-  dom.toServer = toServer
-  dom.callback = callback
-  dom.specialInfo = specialInfo // 是否生成全景图片等（默认不生成的）
-  dom.nid = nid
+  // dom.toServer = toServer
+  // dom.callback = callback
+  // dom.specialInfo = specialInfo // 是否生成全景图片等（默认不生成的）
+  // dom.nid = nid
   let typeList = ['imagelist', 'videolist', 'audiolist', 'filelist']
   if (typeList.includes(type)) {
     dom.multiple = true
   } else {
     dom.multiple = false
   }
-  if (accept) {
-    dom.accept = accept
-  } else {
-    if (dom.accept) {
-      dom.accept = undefined
-    }
-  }
-  dom.onProgress = progress || null
-  dom.onChoseFile = selected || null
-  dom.onError = error || null
+  // if (accept) {
+  //   dom.accept = accept
+  // } else {
+  //   if (dom.accept) {
+  //     dom.accept = undefined
+  //   }
+  // }
+  // dom.onProgress = progress || null
+  // dom.onChoseFile = selected || null
+  // dom.onError = error || null
   dom.sysCallback = chooseFileCallback
   dom.click()
 }
 
 // 上传文件到服务器
-var uploadFileToServer = (file, info) => {
-  const { callback, progress } = info
-  let xhr = new XMLHttpRequest()
-  xhr.open('POST', workApi.upload)
-  let form = new FormData()
-  form.append('type', file.type)
-  form.append('file', file)
-
-  xhr.upload.onprogress = progress
-
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4) {
-      let response = JSON.parse(xhr.responseText)
-      if (callback) {
-        callback(response.name)
-      }
-    }
-  }
-
-  xhr.send(form)
-}
+// var uploadFileToServer = (file, info) => {
+//   const { callback, progress } = info
+//   let xhr = new XMLHttpRequest()
+//   xhr.open('POST', workApi.upload)
+//   let form = new FormData()
+//   form.append('type', file.type)
+//   form.append('file', file)
+//
+//   // xhr.upload.onprogress = progress
+//
+//   xhr.onreadystatechange = function() {
+//     if (xhr.readyState == 4) {
+//       let response = JSON.parse(xhr.responseText)
+//       if (callback) {
+//         callback(response.name)
+//       }
+//     }
+//   }
+//
+//   xhr.send(form)
+// }
 
 var getFileType = file => {
   let type = ''
@@ -320,4 +321,4 @@ var getFileType = file => {
 function getTypeFromName(str){
   return str.match(/\.[^\.]+$/i)[0].slice(1)
 }
-export { chooseFile, uploadFileToServer, getAllowExt, getFileType }
+export { chooseFile }

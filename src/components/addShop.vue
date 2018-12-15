@@ -41,7 +41,7 @@
      </div>
      <div @click="showPicker" class="filed-div">
        <svg class="icon-required" style="width: 0.5em; height: 0.5em;vertical-align: middle;fill: red;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2025"><path d="M876.8 659.2 620.8 512l256-147.2c25.6-12.8 38.4-51.2 19.2-76.8-12.8-25.6-51.2-38.4-76.8-19.2l-256 147.2L563.2 121.6C569.6 89.6 544 64 512 64S454.4 89.6 454.4 121.6l0 294.4-256-147.2C179.2 249.6 140.8 262.4 128 288c-12.8 25.6-6.4 64 19.2 76.8l256 147.2-256 147.2c-25.6 12.8-38.4 51.2-19.2 76.8 12.8 19.2 32 25.6 51.2 25.6 6.4 0 19.2 0 25.6-6.4l256-147.2 0 294.4C454.4 934.4 480 960 512 960s57.6-25.6 57.6-57.6L569.6 608l256 147.2c6.4 6.4 19.2 6.4 25.6 6.4 19.2 0 38.4-12.8 51.2-25.6C908.8 710.4 902.4 672 876.8 659.2z" p-id="2026"></path></svg>
-       <mt-field label="省市区" readonly=true placeholder="请选择省市区" :value="getAd"></mt-field>
+       <mt-field label="省市区" :readonly="true" placeholder="请选择省市区" :value="getAd"></mt-field>
      </div>
      <div class="filed-div">
        <svg class="icon-required" style="width: 0.5em; height: 0.5em;vertical-align: middle;fill: red;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2025"><path d="M876.8 659.2 620.8 512l256-147.2c25.6-12.8 38.4-51.2 19.2-76.8-12.8-25.6-51.2-38.4-76.8-19.2l-256 147.2L563.2 121.6C569.6 89.6 544 64 512 64S454.4 89.6 454.4 121.6l0 294.4-256-147.2C179.2 249.6 140.8 262.4 128 288c-12.8 25.6-6.4 64 19.2 76.8l256 147.2-256 147.2c-25.6 12.8-38.4 51.2-19.2 76.8 12.8 19.2 32 25.6 51.2 25.6 6.4 0 19.2 0 25.6-6.4l256-147.2 0 294.4C454.4 934.4 480 960 512 960s57.6-25.6 57.6-57.6L569.6 608l256 147.2c6.4 6.4 19.2 6.4 25.6 6.4 19.2 0 38.4-12.8 51.2-25.6C908.8 710.4 902.4 672 876.8 659.2z" p-id="2026"></path></svg>
@@ -51,7 +51,7 @@
        <svg class="icon-required" style="width: 0.5em; height: 0.5em;vertical-align: middle;fill: red;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2025"><path d="M876.8 659.2 620.8 512l256-147.2c25.6-12.8 38.4-51.2 19.2-76.8-12.8-25.6-51.2-38.4-76.8-19.2l-256 147.2L563.2 121.6C569.6 89.6 544 64 512 64S454.4 89.6 454.4 121.6l0 294.4-256-147.2C179.2 249.6 140.8 262.4 128 288c-12.8 25.6-6.4 64 19.2 76.8l256 147.2-256 147.2c-25.6 12.8-38.4 51.2-19.2 76.8 12.8 19.2 32 25.6 51.2 25.6 6.4 0 19.2 0 25.6-6.4l256-147.2 0 294.4C454.4 934.4 480 960 512 960s57.6-25.6 57.6-57.6L569.6 608l256 147.2c6.4 6.4 19.2 6.4 25.6 6.4 19.2 0 38.4-12.8 51.2-25.6C908.8 710.4 902.4 672 876.8 659.2z" p-id="2026"></path></svg>
        <div class="add-mark-btn" @click="addMark">地图标注</div>
        <div class="add-mark-tip-btn" @click="addMark">(非常重要)</div>
-       <mt-field label="地图标注" readonly=true></mt-field>
+       <mt-field label="地图标注" :readonly="true"></mt-field>
      </div>
      <div v-if="pickerShow" v-click-outside="hidePicker" class="picker-wrapper">
        <mt-picker :slots="myAddressSlots" @change="onMyAddressChange"></mt-picker>
@@ -66,7 +66,6 @@ import { chooseFile } from '../lib/xhrUploadFile'
 import cityData from '../lib/cityData'
 import { Picker } from 'mint-ui';
 import ClickOutside from 'vue-click-outside'
-console.log(cityData)
 export default {
   name: 'addShop',
   components: {
@@ -145,7 +144,6 @@ export default {
   },
   methods: {
     addPhoto () {
-      console.log('添加图片')
       chooseFile('image')
     },
     getInfoId(){
@@ -175,13 +173,12 @@ export default {
       this.pickerShow = true
     },
     messageListener (event) {
-      window.addEventListener('message', function(event) {
-        // 接收位置信息，用户选择确认位置点后选点组件会触发该事件，回传用户的位置信息
         var loc = event.data;
+        console.log(222)
         if (loc && loc.module == 'locationPicker') {//防止其他应用也会向该页面post信息，需判断module是否为'locationPicker'
-          console.log('location', loc);
+          // console.log('location', loc);
+          console.log(111)
         }
-      }, false);
     },
     addMark(){
       this.showMap = true;

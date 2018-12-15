@@ -53,6 +53,15 @@
        <div class="add-mark-tip-btn" @click="addMark">(非常重要)</div>
        <mt-field label="地图标注" :readonly="true"></mt-field>
      </div>
+     <div style="text-align: center">
+       <mt-checklist
+         v-model="agreeItem"
+         :options="['我已阅读并同意协议条款']"
+       ></mt-checklist>
+     </div>
+     <div style="text-align: center">
+       <button class="btn next" @click="next">下一步</button>
+     </div>
      <div v-if="pickerShow" v-click-outside="hidePicker" class="picker-wrapper">
        <mt-picker :slots="myAddressSlots" @change="onMyAddressChange"></mt-picker>
      </div>
@@ -66,11 +75,13 @@ import { chooseFile } from '../lib/xhrUploadFile'
 import cityData from '../lib/cityData'
 import { Picker } from 'mint-ui';
 import ClickOutside from 'vue-click-outside'
+import { Checklist } from 'mint-ui';
 export default {
   name: 'addShop',
   components: {
     'mt-field': Field,
-    'mt-picker': Picker
+    'mt-picker': Picker,
+    'mt-checklist': Checklist
   },
   directives: {
     ClickOutside
@@ -121,7 +132,8 @@ export default {
       myAddressCity:'',
       myAddresscounty:'',
       pickerShow: false,
-      showMap: false
+      showMap: false,
+      agreeItem: []
     }
   },
   mounted(){
@@ -282,7 +294,7 @@ export default {
   flex-direction: column;
   text-align: center;
 }
-.preserve-pos-btn{
+.preserve-pos-btn,.next{
   width: 80%;
   color: #fff;
   background: #0078FA;

@@ -32,6 +32,9 @@ export default {
 #app {
   font-family: 'Arial', Helvetica, Arial, sans-serif;
   font-size: 14px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 #app input::-webkit-input-placeholder {
   color: #B5B5B5;

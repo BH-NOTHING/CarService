@@ -5,7 +5,8 @@
     <!--<orderRecord/>-->
     <!--<collectionRecord/>-->
     <!--<addShop/>-->
-    <uploadLisence />
+    <!--<uploadLisence />-->
+    <orderInfo />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import orderRecord from './components/orderRecord'
 import collectionRecord from './components/collectionRecord'
 import addShop from './components/addShop'
 import uploadLisence from './components/uploadLisence'
+import orderInfo from './components/orderInfo'
 
 export default {
   name: 'App',
@@ -25,7 +27,8 @@ export default {
     orderRecord,
     collectionRecord,
     addShop,
-    uploadLisence
+    uploadLisence,
+    orderInfo
   }
   // B5B5B5
 }
@@ -40,6 +43,7 @@ export default {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
+  background: #FFFFFF;
 }
 #app input::-webkit-input-placeholder {
   color: #B5B5B5;

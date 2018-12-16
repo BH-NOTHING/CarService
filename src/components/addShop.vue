@@ -60,7 +60,7 @@
        ></mt-checklist>
      </div>
      <div style="text-align: center">
-       <button class="btn next" @click="next">下一步</button>
+       <button class="btn next" @click="nextStep">下一步</button>
      </div>
      <div v-if="pickerShow" v-click-outside="hidePicker" class="picker-wrapper">
        <mt-picker :slots="myAddressSlots" @change="onMyAddressChange"></mt-picker>
@@ -197,6 +197,9 @@ export default {
     },
     preservePos(){
       this.showMap = false
+    },
+    nextStep(){
+      console.log('下一步')
     }
   }
 }

@@ -4,8 +4,9 @@
     <!--<collection/>-->
     <!--<orderRecord/>-->
     <!--<collectionRecord/>-->
-    <addShop/>
+    <!--<addShop/>-->
     <!--<qqmap></qqmap>-->
+    <uploadLisence />
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import collection from './components/collection'
 import orderRecord from './components/orderRecord'
 import collectionRecord from './components/collectionRecord'
 import addShop from './components/addShop'
+import uploadLisence from './components/uploadLisence'
 
 export default {
   name: 'App',
@@ -24,6 +26,7 @@ export default {
     orderRecord,
     collectionRecord,
     addShop,
+    uploadLisence
   }
   // B5B5B5
 }

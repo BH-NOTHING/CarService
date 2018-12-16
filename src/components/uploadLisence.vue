@@ -103,6 +103,9 @@ export default {
     addLeaderBack(){
       chooseFile('image')
     },
+    nextStep(){
+
+    }
   }
 }
 </script>

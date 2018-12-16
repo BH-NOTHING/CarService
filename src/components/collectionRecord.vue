@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="collection-record-page">
     <div class="collection-total">
       <span>累计收款金额(元)：</span>
       <span class="collection-total-num">{{getTotal}}</span>
@@ -34,41 +34,41 @@ export default {
         {
           name: '坐垫(5座)坐垫(5座)',
           price: '30.00元',
-          date: '2018-12-02 10：40：41'
+          date: '2018-12-02 10:40:41'
         },
         {
           name: '坐垫(5座)',
           price: '30.00元',
-          date: '2018-12-02 10：40：41'
+          date: '2018-12-02 10:40:41'
         },
         {
           name: '坐垫(5座)',
           price: '30.00元',
-          date: '2018-12-02 10：40：41'
+          date: '2018-12-02 10:40:41'
         }, {
           name: '坐垫(5座)',
           price: '30.00元',
-          date: '2018-12-02 10：40：41'
+          date: '2018-12-02 10:40:41'
         }, {
           name: '坐垫(5座)',
           price: '30.00元',
-          date: '2018-12-02 10：40：41'
+          date: '2018-12-02 10:40:41'
         }, {
           name: '坐垫(5座)',
           price: '30.00元',
-          date: '2018-12-02 10：40：41'
+          date: '2018-12-02 10:40:41'
         }, {
           name: '坐垫(5座)',
           price: '30.00元',
-          date: '2018-12-02 10：40：41'
+          date: '2018-12-02 10:40:41'
         }, {
           name: '坐垫(5座)',
           price: '30.00元',
-          date: '2018-12-02 10：40：41'
+          date: '2018-12-02 10:40:41'
         }, {
           name: '坐垫(5座)',
           price: '30.00元',
-          date: '2018-12-02 10：40：41'
+          date: '2018-12-02 10:40:41'
         }
       ]
     }
@@ -86,6 +86,9 @@ export default {
 }
 </script>
 <style scoped>
+.collection-record-page{
+  padding: 20px 10px
+}
 .collection-total{
   width: 90%;
   margin: auto;
@@ -125,11 +128,12 @@ export default {
 }
 .item-wrap .item-price{
   padding-right: 10px;
-  width: calc(30% - 10px);
+  width: calc(30% - 20px);
 }
 .item-wrap .item-date{
-  width: calc(40% - 10px);
+  width: 40%;
   font-size: 12px;
+  line-height: 19px;
   color: #A1A1A1;
 }
 </style>

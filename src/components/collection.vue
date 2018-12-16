@@ -46,20 +46,15 @@ export default {
 }
 </script>
 <style scoped>
-.collection{
-  font-size: 12px;
-}
 .collection .collection-input{
   border: none;
   outline: none;
+  background: transparent;
   margin-left: 16px;
 }
 .collection .car-type,.collection .pay-id{
   padding: 12px;
   border-bottom: 1px solid #E2E2E2;
-}
-.collection .car-title{
-  font-weight: bold;
 }
 .collection .btn-wrapper{
   width: 100%;

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="change-phone-page">
     <div class="phoneInfo">
       <div class="info-icon">
         {{name ? name.slice(0,1) : ''}}
@@ -44,6 +44,10 @@ export default {
 }
 </script>
 <style scoped>
+.change-phone-page{
+  text-align: center;
+  padding: 10px;
+}
 .phoneInfo{
   width: 100%;
   height: 200px;
@@ -78,7 +82,7 @@ export default {
   border: none;
   background: #007AF9;
   border-radius: 4px;
-  margin-top: 30px;
+  margin: 30px auto;
   color: #DCF5FB;
 }
 </style>

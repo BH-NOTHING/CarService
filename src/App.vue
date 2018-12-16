@@ -5,7 +5,6 @@
     <!--<orderRecord/>-->
     <!--<collectionRecord/>-->
     <!--<addShop/>-->
-    <!--<qqmap></qqmap>-->
     <uploadLisence />
   </div>
 </template>
